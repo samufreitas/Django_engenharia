@@ -9,28 +9,28 @@ from agenda.serializers import UserSeriaLizer, GroupSerializer, LocalSerializer,
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSeriaLizer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class LocalViewSet(viewsets.ModelViewSet):
     queryset = Local.objects.all()
     serializer_class = LocalSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class ConvidadoViewSet(viewsets.ModelViewSet):
     queryset = Convidado.objects.all()
     serializer_class = ConvidadoSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class AgendaViewSet(viewsets.ModelViewSet):
     queryset = Agenda.objects.all()
     serializer_class = AgendaSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]

@@ -19,6 +19,8 @@ class Local(models.Model):
 class Convidado(models.Model):
     nome = models.CharField(max_length=255, null=True)
     email = models.EmailField()
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+
     def __str__(self):
         return f'{self.nome} - {self.email}'
 
