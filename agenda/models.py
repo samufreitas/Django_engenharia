@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -18,7 +19,6 @@ class Local(models.Model):
 class Convidado(models.Model):
     nome = models.CharField(max_length=255, null=True)
     email = models.EmailField()
-
     def __str__(self):
         return f'{self.nome} - {self.email}'
 
@@ -37,3 +37,20 @@ class Agenda(models.Model):
         return f'{self.compromisso} começa {self.data_inicio} até {self.data_fim}'
 
 
+# ----------------- Parte de teste -------------
+
+class Categoria(models.Model):
+    nome = models.CharField(max_length=20)
+
+    def __str__(self) -> str:
+        return self.nome
+
+
+class Produto(models.Model):
+    nome = models.CharField(max_length=100)
+    preco = models.IntegerField()
+    descricao = models.TextField()
+    categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
+
+    def __str__(self) -> str:
+        return self.nome
